@@ -1,0 +1,44 @@
+{
+  "auth": {
+    "email_already_in_use": "الإيميل مستخدم مسبقاً",
+    "username_already_in_use": "اسم المستخدم مستخدم مسبقاً",
+    "email_or_username_already_in_use": "الإيميل أو اسم المستخدم مستخدم مسبقاً",
+    "invalid_credentials": "الإيميل أو كلمة المرور غير صحيحة",
+    "invalid_token": "الرمز غير صالح أو منتهي الصلاحية",
+    "account_deactivated": "هذا الحساب موقوف",
+    "user_not_found": "المستخدم غير موجود",
+    "admin_required": "هذه العملية تتطلب صلاحيات المشرف",
+    "no_permission": "ليس لديك صلاحية لتنفيذ هذا الإجراء",
+    "authentication_required": "يجب تسجيل الدخول أولاً"
+  },
+  "otp": {
+    "email_already_verified": "الإيميل محقق مسبقاً",
+    "phone_already_verified": "رقم الهاتف محقق مسبقاً",
+    "phone_not_set": "رقم الهاتف غير مضاف",
+    "phone_country_required": "يجب إضافة رقم الهاتف ومفتاح الدولة أولاً",
+    "phone_country_not_found": "مفتاح الدولة غير موجود",
+    "send_failed": "فشل إرسال رمز التحقق",
+    "invalid_code": "رمز التحقق غير صحيح أو منتهي الصلاحية",
+    "verification_failed": "فشل التحقق من الرمز",
+    "no_pending_otp": "لا يوجد رمز تحقق نشط — اطلب رمزاً جديداً",
+    "sent_email": "تم إرسال رمز التحقق إلى إيميلك",
+    "sent_phone": "تم إرسال رمز التحقق إلى رقم هاتفك"
+  },
+  "avatar": {
+    "no_avatar_to_delete": "لا توجد صورة للحذف",
+    "upload_failed": "فشل رفع الصورة",
+    "delete_failed": "فشل حذف الصورة"
+  },
+  "account": {
+    "deleted": "تم حذف الحساب بنجاح"
+  },
+  "validation": {
+    "invalid_data": "البيانات المدخلة غير صالحة",
+    "resource_not_found": "العنصر المطلوب غير موجود",
+    "resource_already_exists": "العنصر موجود مسبقاً",
+    "password_min_length": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+    "password_uppercase": "كلمة المرور يجب أن تحتوي على حرف كبير واحد على الأقل",
+    "password_lowercase": "كلمة المرور يجب أن تحتوي على حرف صغير واحد على الأقل",
+    "password_number": "كلمة المرور يجب أن تحتوي على رقم واحد على الأقل"
+  }
+}

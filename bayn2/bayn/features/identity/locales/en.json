@@ -1,0 +1,44 @@
+{
+  "auth": {
+    "email_already_in_use": "Email already in use",
+    "username_already_in_use": "Username already in use",
+    "email_or_username_already_in_use": "Email or username already in use",
+    "invalid_credentials": "Invalid email or password",
+    "invalid_token": "Invalid or expired token",
+    "account_deactivated": "This account has been deactivated",
+    "user_not_found": "User not found",
+    "admin_required": "Admin access required",
+    "no_permission": "You do not have permission",
+    "authentication_required": "Authentication required"
+  },
+  "otp": {
+    "email_already_verified": "Email is already verified",
+    "phone_already_verified": "Phone number is already verified",
+    "phone_not_set": "Phone number not set",
+    "phone_country_required": "Phone number and country must be set before verification",
+    "phone_country_not_found": "Phone country not found",
+    "send_failed": "Failed to send OTP",
+    "invalid_code": "Invalid or expired OTP code",
+    "verification_failed": "OTP verification failed",
+    "no_pending_otp": "No pending OTP found — request a new one",
+    "sent_email": "OTP sent to your email",
+    "sent_phone": "OTP sent to your phone number"
+  },
+  "avatar": {
+    "no_avatar_to_delete": "No avatar to delete",
+    "upload_failed": "Failed to upload avatar",
+    "delete_failed": "Failed to delete avatar"
+  },
+  "account": {
+    "deleted": "Account deleted successfully"
+  },
+  "validation": {
+    "invalid_data": "Invalid request data",
+    "resource_not_found": "Resource not found",
+    "resource_already_exists": "Resource already exists",
+    "password_min_length": "Password must be at least 8 characters",
+    "password_uppercase": "Password must contain at least one uppercase letter",
+    "password_lowercase": "Password must contain at least one lowercase letter",
+    "password_number": "Password must contain at least one number"
+  }
+}
