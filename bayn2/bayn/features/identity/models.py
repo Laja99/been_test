@@ -162,9 +162,9 @@ class User(Base):
 
     # ── الهاتف ──────────────────────────────────
     # phone_country_id = FK لجدول countries لتخزين مفتاح الدولة (+966 إلخ)
-    #phone_country_id: Mapped[Optional[uuid.UUID]] = mapped_column(
-      #  UUID(as_uuid=True), ForeignKey("countries.id"), nullable=True
-    #)
+    phone_country_id: Mapped[Optional[uuid.UUID]] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("countries.id"), nullable=True
+    )
     phone_country: Mapped[Optional[str]] = mapped_column(
       String(4), nullable=True
     )
