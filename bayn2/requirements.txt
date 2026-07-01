@@ -7,6 +7,7 @@ sqlalchemy==2.0.35
 asyncpg==0.29.0          # PostgreSQL async driver
 aiosqlite==0.20.0        # SQLite async driver (للاختبارات)
 alembic==1.13.3          # Database migrations
+bcrypt==4.0.1
 
 # Auth & Security
 passlib[bcrypt]==1.7.4   # Password hashing
