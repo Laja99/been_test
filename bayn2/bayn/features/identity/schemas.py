@@ -44,7 +44,7 @@ class UserSignup(BaseModel):
     password: str
 
     # الهاتف — اختياري عند التسجيل
-    phone_country: Optional[str] = None
+    phone_country_id: Optional[uuid.UUID] = None
     phone_number: Optional[int] = None
 
     @field_validator("username")
@@ -82,51 +82,6 @@ class UserSignup(BaseModel):
             raise ValueError("Password must contain at least one number")
         return value
 
-    @field_validator("phone_number")
-    @classmethod
-    def validate_saudi_phone(cls, value: int | None) -> int | None:
-        """
-        التحقق من صيغة رقم الهاتف السعودي.
-        
-        الصيغة الصحيحة: 5XXXXXXXX (9 أرقام، يبدأ بـ 5)
-        أمثلة صحيحة:
-            - 501234567
-            - 512345678
-        
-        أمثلة خاطئة:
-            - +966501234567 (بـ مفتاح الدولة)
-            - 966501234567 (بـ مفتاح الدولة بدون +)
-            - 0501234567 (بـ 0)
-            - 5012345 (أقل من 9 أرقام)
-        """
-        # إذا لم يدخل رقم هاتف، نتجاهل
-        if value is None:
-            return None
-
-        # نحول الرقم لـ string للتحقق
-        phone = str(value).strip()
-
-        # 1. نرفض الأرقام اللي تبدأ بـ +966 أو 966 أو 0
-        if phone.startswith('+966'):
-            raise ValueError("Error: Phone number must be in format 5XXXXXXXX (e.g., 501234567), not +966")
-
-        if phone.startswith('966'):
-            raise ValueError("Error: Phone number must be in format 5XXXXXXXX (e.g., 501234567), not 966")
-
-        if phone.startswith('0'):
-            raise ValueError("Error: Phone number must be in format 5XXXXXXXX (e.g., 501234567), not 05XXXXXXX")
-
-        # 2. التحقق من أن الرقم يحتوي على أرقام فقط
-        if not phone.isdigit():
-            raise ValueError("Error: Phone number must contain digits only.")
-
-        # 3. التحقق من الصيغة: يجب أن يبدأ بـ 5 ويكون 9 أرقام بالضبط
-        if not re.match(r"^5\d{8}$", phone):
-            raise ValueError("Error: Phone number must start with 5 and be exactly 9 digits long (e.g., 501234567).")
-
-        return int(phone)
-
-
 class UserLogin(BaseModel):
     """بيانات تسجيل الدخول — إيميل وباسورد فقط."""
     email: EmailStr
@@ -153,7 +108,7 @@ class UpdateProfileRequest(BaseModel):
     industry_id: Optional[uuid.UUID] = None
 
     # يُسمح بتحديث الهاتف
-    phone_country: Optional[str] = None
+    phone_country_id: Optional[uuid.UUID] = None
     phone_number: Optional[int] = None
 
     # يُسمح بتحديث الرقم الوطني
@@ -242,7 +197,7 @@ class UserResponse(BaseModel):
     username: str
 
     # الهاتف — مفتاح الدولة الدولي (مثل +966)
-    phone_country: Optional[str]
+    phone_country_id: Optional[uuid.UUID]
     phone_number: Optional[int]
 
     # الملف الشخصي
